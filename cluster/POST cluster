@@ -1,0 +1,129 @@
+Create One Cluster(including single-region, Multi-region and Global Cluster)
+
+Create Single Region:-
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
+     --header "Content-Type: application/json" \
+     --include \
+     --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/clusters?pretty=true" \
+     --data '
+       {
+         "name": "SingleRegionCluster",
+         "diskSizeGB": 100,
+         "numShards": 1,
+         "providerSettings": {
+           "providerName": "AWS",
+           "instanceSizeName": "M40",
+           "regionName": "US_EAST_1"
+         },
+         "clusterType" : "REPLICASET",
+         "replicationFactor": 3,
+         "replicationSpecs": [{
+           "numShards": 1,
+           "regionsConfig": {
+             "US_EAST_1": {
+               "analyticsNodes": 0,
+               "electableNodes": 3,
+               "priority": 7,
+               "readOnlyNodes": 0
+             }
+           },
+           "zoneName": "Zone 1"
+         }],
+         "backupEnabled": false,
+         "providerBackupEnabled" : true,
+         "autoScaling": {
+           "diskGBEnabled": true
+         }
+       }'
+
+
+
+
+
+
+
+Create Multi-Region:-
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
+     --header "Content-Type: application/json" \
+     --include \
+     --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/clusters?pretty=true" \
+     --data '
+       {
+         "name": "MultiRegionCluster",
+         "diskSizeGB": 25,
+         "numShards": 1,
+         "providerSettings": {
+           "providerName": "AWS",
+           "instanceSizeName": "M10"
+         },
+         "clusterType": "REPLICASET",
+         "replicationSpecs": [
+           {
+             "numShards": 1,
+             "regionsConfig": {
+               "US_EAST_1": {
+                 "analyticsNodes": 0,
+                 "electableNodes": 2,
+                 "priority": 7,
+                 "readOnlyNodes": 0
+               },
+               "US_WEST_1": {
+                 "analyticsNodes": 0,
+                 "electableNodes": 1,
+                 "priority": 6,
+                 "readOnlyNodes": 0
+               }
+             },
+             "zoneName": "Zone 1"
+           }
+         ],
+         "backupEnabled": true
+       }'
+
+
+
+
+Create Global Cluster:-
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
+     --header "Content-Type: application/json" \
+     --include \
+     --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/clusters?pretty=true" \
+     --data '
+       {
+         "name": "TestGlobalCluster",
+         "diskSizeGB": 40,
+         "providerSettings": {
+           "providerName": "AWS",
+           "instanceSizeName": "M30"
+         },
+         "clusterType": "GEOSHARDED",
+         "replicationSpecs": [
+           {
+             "numShards": 1,
+             "regionsConfig": {
+               "US_WEST_1": {
+                 "analyticsNodes": 0,
+                 "electableNodes": 3,
+                 "priority": 7,
+                 "readOnlyNodes": 0
+               }
+             },
+             "zoneName": "Zone 1"
+           },
+           {
+             "numShards": 1,
+             "regionsConfig": {
+               "US_EAST_1": {
+                 "analyticsNodes": 0,
+                 "electableNodes": 3,
+                 "priority": 7,
+                 "readOnlyNodes": 0
+               }
+             },
+             "zoneName": "Zone 2"
+           }
+         ],
+         "backupEnabled": true
+       }'
