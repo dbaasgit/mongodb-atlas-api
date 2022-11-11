@@ -1,11 +1,15 @@
 Get All Clusters in All Projects
 
+Ref. URL: https://www.mongodb.com/docs/atlas/reference/api/clusters-get-all-key/#get-all-clusters-in-all-projects
+
 curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
      --include \
      --request GET "https://cloud.mongodb.com/api/atlas/v1.0/clusters?pretty=true"
      
      
 Get All Clusters
+
+Ref. URL: https://www.mongodb.com/docs/atlas/reference/api/clusters-get-all/#get-all-clusters
 
 curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
      --include \
@@ -14,12 +18,16 @@ curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
         
 Get One Cluster
 
+Ref. URL: https://www.mongodb.com/docs/atlas/reference/api/clusters-get-one/#get-one-cluster
+
 curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
      --include \
      --request GET "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/clusters/{CLUSTER-NAME}?pretty=true"
      
 
 Get Advanced Configuration Options for One Cluster
+
+Ref. URL: https://www.mongodb.com/docs/atlas/reference/api/clusters-get-advanced-configuration-options/#get-advanced-configuration-options-for-one-cluster
 
 curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" \
      --include --digest \
