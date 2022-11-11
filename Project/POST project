@@ -1,0 +1,38 @@
+Create One Project
+
+https://www.mongodb.com/docs/atlas/reference/api/project-create-one/#create-one-project
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+     --header "Accept: application/json" \
+     --header "Content-Type: application/json" \
+     --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups?projectOwnerId=a138a4bdb497e73460e70d04&pretty=true" \
+     --data '
+       {
+         "name" : "ProjectFoobar",
+         "orgId" : "5a0a1e7e0f2912c554080adc"
+       }'
+       
+ Add Teams to a Project
+ 
+ https://www.mongodb.com/docs/atlas/reference/api/project-add-team/#add-teams-to-a-project
+ 
+ curl -u "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
+ --header "Accept: application/json" \
+ --header "Content-Type: application/json" \
+ --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/teams?pretty=true" \
+ --data '[ { "teamId" : "{TEAM-ID}", "roleNames" : [ "GROUP_OWNER" ] } ]'
+ 
+ 
+ Create One Project Invitation
+ 
+ https://www.mongodb.com/docs/atlas/reference/api/project-create-one-invitation/#create-one-project-invitation
+ 
+ curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+     --header "Accept: application/json" \
+     --header "Content-Type: application/json" \
+     --request POST "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/invites?pretty=true"
+     --data '
+       {
+          "roles": [ "GROUP_OWNER" ],
+          "username": "jane.smith@example.com"
+       }'
