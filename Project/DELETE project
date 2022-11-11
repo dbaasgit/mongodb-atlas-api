@@ -1,0 +1,33 @@
+Delete a Project
+
+https://www.mongodb.com/docs/atlas/reference/api/project-delete-one/#delete-a-project
+
+curl -X DELETE --digest -u "{PUBLIC-KEY}:{PRIVATE-KEY}" \
+  "https://cloud.mongodb.com/api/atlas/v1.0/groups/6c819f1b87d9d6037bc2cdb1"
+  
+  Remove a Team from a Project
+  
+  https://www.mongodb.com/docs/atlas/reference/api/teams-remove-from-project/#remove-a-team-from-a-project
+  
+  curl -X DELETE --digest --user "{PUBLIC-KEY}:{PRIVATE-KEY}" \
+ "https://cloud.mongodb.com/api/atlas/v1.0/groups/6b9edfc387d9d60af01e0c23/teams/6bdc97b980eef5147f82307g?pretty=true"
+ 
+ Remove One User from a Project
+ 
+ https://www.mongodb.com/docs/atlas/reference/api/project-remove-user/#remove-one-user-from-a-project
+ 
+ curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  --request DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/5d40865dd5ec13e5f9e9d899/users/575f1786e4b08fa17c05b8f2"
+  
+  
+  Delete One Project Invitation
+  
+  https://www.mongodb.com/docs/atlas/reference/api/project-delete-invitation/#delete-one-project-invitation
+  
+  curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+     --header "Accept: application/json" \
+     --request DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/invitations/{INVITATION-ID}"
+     
+     
