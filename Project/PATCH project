@@ -1,0 +1,50 @@
+Update One Project Invitation
+
+https://www.mongodb.com/docs/atlas/reference/api/project-update-one-invitation/#update-one-project-invitation
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+     --header "Accept: application/json" \
+     --header "Content-Type: application/json" \
+     --request PATCH "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/invites/{INVITATION-ID}?pretty=true" \
+      --data '
+       {
+          "roles": [
+            "GROUP_OWNER"
+          ],
+          "username": "jane.smith@example.com"
+       }'
+       
+ Update One Project Invitation by Invitation ID
+ 
+ https://www.mongodb.com/docs/atlas/reference/api/project-update-one-invitation-by-id/#update-one-project-invitation-by-invitation-id
+ 
+ curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+     --header "Accept: application/json" \
+     --header "Content-Type: application/json" \
+     --request PATCH "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/invites/{INVITATION-ID}?pretty=true" \
+      --data '
+       {
+          "roles": [
+            "GROUP_OWNER"
+          ]
+       }'
+       
+ 
+ Update One Project Settings
+
+https://www.mongodb.com/docs/atlas/reference/api/project-settings-update-one/#update-one-project-settings
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest --include \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  --request PATCH "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/settings" \
+   --data '
+    {
+      "isCollectDatabaseSpecificsStatisticsEnabled":false,
+      "isDataExplorerEnabled":true,
+      "isPerformanceAdvisorEnabled":true,
+      "isRealtimePerformancePanelEnabled":true,
+      "isSchemaAdvisorEnabled":true
+    }'
+    
+    
