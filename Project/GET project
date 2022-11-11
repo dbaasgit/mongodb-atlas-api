@@ -51,5 +51,11 @@ https://www.mongodb.com/docs/atlas/reference/api/project-settings-get-one/#get-o
 curl -i -u "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/settings"
 
 
+Get Teams Assigned to a Project
 
+https://www.mongodb.com/docs/atlas/reference/api/project-get-teams/#get-teams-assigned-to-a-project
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
+     --header "Accept: application/json" \
+     --request GET "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/teams?pretty=true"
 
