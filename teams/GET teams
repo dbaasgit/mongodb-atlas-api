@@ -1,0 +1,42 @@
+Get All Teams
+
+https://www.mongodb.com/docs/atlas/reference/api/teams-get-all/#get-all-teams
+
+curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest -i \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  "https://cloud.mongodb.com/api/atlas/v1.0/orgs/<org-id>/teams?pretty=true"
+  
+  
+  Get One Team by ID
+  
+  https://www.mongodb.com/docs/atlas/reference/api/teams-get-one-by-id/#get-one-team-by-id
+  
+  curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}"" --digest -i \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  "https://cloud.mongodb.com/api/atlas/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}?pretty=true"
+  
+  
+  Get One Team by Name
+  
+  https://www.mongodb.com/docs/atlas/reference/api/teams-get-one-by-name/#get-one-team-by-name
+  
+  curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}"" --digest -i \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  "https://cloud.mongodb.com/api/atlas/v1.0/orgs/{ORG-ID}/teams/byName/{TEAM-NAME}?pretty=true"
+  
+  
+  Get All Users Assigned to a Team
+  
+  https://www.mongodb.com/docs/atlas/reference/api/teams-get-all-users/#get-all-users-assigned-to-a-team
+  
+  curl --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest -i \
+  --header "Accept: application/json" \
+  --request GET "https://cloud.mongodb.com/api/atlas/v1.0/orgs/{ORG-ID}/teams/{TEAM-ID}/users?pretty=true"
+  
+  
+  
+  
+  
