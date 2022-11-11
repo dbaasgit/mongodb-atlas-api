@@ -1,0 +1,11 @@
+Create a Team
+
+https://www.mongodb.com/docs/atlas/reference/api/teams-create-one/#create-a-team
+
+curl -u "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest \
+ --header "Accept: application/json" \
+ --header "Content-Type: application/json" \
+ --request POST "https://cloud.mongodb.com/api/atlas/v1.0/orgs/{ORG-ID}/teams/" \
+ --data '{ "name" : "myNewTeam", "usernames": ["jane.a.smith@example.com", "jane.b.smith@example.com", "jane.c.smith@example.com"] }'
+ 
+ 
