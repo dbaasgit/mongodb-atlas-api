@@ -1,0 +1,5 @@
+Delete a Cluster
+
+https://www.mongodb.com/docs/atlas/reference/api/clusters-delete-one/#delete-a-cluster
+
+curl -i -u "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest -X DELETE "https://cloud.mongodb.com/api/atlas/v1.0/groups/{project-ID}/clusters/{cluster-Name}"
