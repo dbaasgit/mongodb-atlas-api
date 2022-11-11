@@ -1,0 +1,23 @@
+Rename a Team
+
+https://www.mongodb.com/docs/atlas/reference/api/teams-rename-one/#rename-a-team
+
+curl  -X PATCH --header "Content-Type: application/json" --include --user "{PUBLIC-KEY}:{PRIVATE-KEY}" --digest /
+ "https://cloud.mongodb.com/api/tlas/v1.0/orgs/6001f2c580eef55aedbc6bb1/teams/6b720e1087d9d66b272f1c86?pretty=true" /
+ --data '{"name":"Engineering"}'
+ 
+ 
+ Update Team Roles in One Project
+ 
+ https://www.mongodb.com/docs/atlas/reference/api/teams-update-roles/#update-team-roles-in-one-project
+ 
+ curl --user '{PUBLIC-KEY}:{PRIVATE-KEY}' --digest \
+ --header "Accept: application/json" \
+ --header "Content-Type: application/json" \
+ --request PATCH "https://cloud.mongodb.com/api/atlas/v1.0/groups/{GROUP-ID}/teams/{TEAM-ID3}?pretty=true" \
+ --data '{
+     "roleNames": ["GROUP_OWNER"]
+   }'
+   
+   
+   
